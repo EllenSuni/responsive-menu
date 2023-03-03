@@ -1,0 +1,48 @@
+$font: 'Yaldevi', sans-serif;
+$main-color: #AD6C5A;
+$light-color: #F8F2F0;
+$dark-color: #273020;
+
+body {
+    background-color: $light-color;
+    background-image: url(/images/3003-mönster.jpg);
+    background-size: 20%;
+}
+
+.nav {
+    width: 100%;
+    height: 70px;
+    background-color: #F8F2F0;
+    display: flex;
+    align-items: center;
+
+    .fa-bars {
+        color: $main-color;
+        font-size: 25px;
+        transform: translateX(17px);
+        background-color: aquamarine;
+
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &:hover {
+        background-color: aqua;
+
+        .nav__list {
+            display: block
+        }
+    }
+
+    &__list {
+        display: none;
+    }
+}
+
+    
+
+
+
