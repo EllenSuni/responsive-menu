@@ -5,14 +5,17 @@ body {
   background-size: 20%;
 }
 
-.nav {
+header {
   width: 100%;
   height: 70px;
   background-color: #F8F2F0;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  position: relative;
+  z-index: -2;
 }
-.nav .fa-bars {
+
+.fa-bars {
   color: #AD6C5A;
   font-size: 25px;
   transform: translateX(17px);
@@ -22,12 +25,53 @@ body {
   justify-content: center;
   align-items: center;
 }
-.nav:hover {
-  background-color: aqua;
+.fa-bars:hover {
+  background-color: #273020;
 }
-.nav:hover .nav__list {
-  display: block;
+
+.fa-bars {
+  display: none;
+}
+
+.nav {
+  position: absolute;
+  width: 100%;
+}
+.nav::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100vh;
+  background-image: url(/images/pexels-gradienta-7130557.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .nav__list {
-  display: none;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.nav__item {
+  max-width: 200px;
+  width: 100%;
+  height: 62px;
+  background-color: #F8F2F0;
+  border-radius: 17px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nav__link {
+  font-family: "Yaldevi", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 21px;
+  letter-spacing: 0.075em;
+  text-decoration: none;
+  color: #273020;
 }
