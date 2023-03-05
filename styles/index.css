@@ -12,32 +12,45 @@ header {
   display: flex;
   flex-direction: column;
   position: relative;
-  z-index: -2;
 }
 
-.fa-bars {
+.fa-solid {
   color: #AD6C5A;
-  font-size: 25px;
+  font-size: 30px;
   transform: translateX(17px);
   width: 50px;
-  height: 50px;
+  height: 70px;
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.fa-bars:hover {
-  background-color: #273020;
-}
-
-.fa-bars {
-  display: none;
+  cursor: pointer;
 }
 
 .nav {
+  display: none;
+}
+
+.checkbox {
+  position: relative;
+  top: -40px;
+  left: 35px;
+  align-self: flex-start;
+  cursor: pointer;
+  visibility: hidden;
+  z-index: 2;
+}
+
+.open:checked + .nav {
+  display: block;
+}
+
+.nav {
+  justify-self: flex-end;
   position: absolute;
   width: 100%;
+  z-index: 1;
 }
-.nav::after {
+.nav::before {
   content: "";
   position: absolute;
   top: 0;
@@ -49,16 +62,16 @@ header {
   background-repeat: no-repeat;
 }
 .nav__list {
-  height: 100vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 7%;
 }
 .nav__item {
-  max-width: 200px;
-  width: 100%;
+  min-width: 200px;
+  width: 50%;
   height: 62px;
   background-color: #F8F2F0;
   border-radius: 17px;
@@ -67,11 +80,20 @@ header {
   align-items: center;
 }
 .nav__link {
+  width: 70px;
+  height: 50px;
   font-family: "Yaldevi", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  line-height: 21px;
+  line-height: 50px;
   letter-spacing: 0.075em;
+  text-align: center;
   text-decoration: none;
   color: #273020;
+}
+
+@media screen and (min-width: 700px) {
+  .nav__list {
+    gap: 10%;
+  }
 }

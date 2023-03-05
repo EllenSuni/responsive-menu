@@ -16,42 +16,48 @@ header {
     display: flex;
     flex-direction: column;
     position: relative;
-    z-index: -2;
 }
 
-.fa-bars {
+
+
+.fa-solid {
     color: $main-color;
-    font-size: 25px;
+    font-size: 30px;
     transform: translateX(17px);
 
     width: 50px;
-    height: 50px;
+    height: 70px;
     display: flex;
     justify-content: center;
     align-items: center;
-
-    &:hover {
-        background-color: #273020;
-    }
+    cursor: pointer;
 }
 
-// Un-comment later
-// .nav__list {
-//     display: none;
-// }
-
-
-// On hover
-
-.fa-bars {
+.nav {
     display: none;
 }
 
-.nav {    
+.checkbox {
+    position: relative;
+    top: -40px;
+    left: 35px;
+    align-self: flex-start;
+    cursor: pointer;
+    visibility: hidden; 
+    z-index: 2;   
+}
+
+.open:checked + .nav {
+    display: block;
+}
+
+.nav {
+    justify-self: flex-end;
     position: absolute;
     width: 100%;
+    z-index: 1;
 
-    &::after {
+    &::before {
         content: "";
         position: absolute;
         top: 0;
@@ -62,39 +68,63 @@ header {
         background-size: cover;
         background-repeat: no-repeat;
     }
-
+    
     &__list {
-        height: 100vh;
+        height: 70vh;
         display: flex;
         flex-direction: column;        
         justify-content: center;
         align-items: center;
-        gap: 40px;
+        gap: 7%;
     }
-
+    
     &__item {
-        max-width: 200px;
-        width: 100%;
+        min-width: 200px;
+        width: 50%;
         height: 62px;
         background-color: $light-color;
         border-radius: 17px;
-
+    
         display: flex;
         justify-content: center;
         align-items: center;
     }
-
+    
     &__link {
+        width: 70px;
+        height: 50px;
         font-family: $font;
         font-weight: 500;
         font-size: 16px;
-        line-height: 21px;
+        line-height: 50px;
         letter-spacing: 0.075em;
-
+        text-align: center;
+    
         text-decoration: none;
         color: $dark-color;
     }
 }
+
+@media screen and (min-width:700px) {
+    .nav__list {
+        gap: 10%;
+    }    
+}
+
+@media screen and (min-width: 1100px) {
+    
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 
